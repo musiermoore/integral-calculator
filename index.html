@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="src/lib/math.js" type="text/javascript"></script>
+    <title>Решение интегралов</title>
+</head>
+<body>
+    <main>
+        <label>
+            Интеграл:
+            <input id="integral" type="text" value="sqrt(1 + 2 * x ^ 2 - x ^ 3)">
+        </label>
+        <label class="limits">
+            Пределы:
+            <input type="text" id="first-limit" class="limit" value="1.2">
+            <input type="text" id="second-limit" class="limit" value="2">
+        </label>
+        <label class="limits">
+            Промежуток интегрирования:
+            <input type="text" id="integration-interval" min="1" max="100000" value="2">
+        </label>
+
+        <button id="calculate">
+            Рассчитать
+        </button>
+
+        <div class="result">
+            <div>
+                Метод прямоугольников:
+            </div>
+            <div id="rectangle-result">
+
+            </div>
+        </div>
+
+        <div class="result">
+            <div>
+                Метод трапеций:
+            </div>
+            <div id="trapezoid-result">
+
+            </div>
+        </div>
+
+        <div class="result">
+            <div>
+                Метод Симпсона:
+            </div>
+            <div id="simpson-result">
+
+            </div>
+        </div>
+
+    </main>
+
+    <script src="src/helpers.js"></script>
+
+    <script src="src/integrals/rectangle.js"></script>
+    <script src="src/integrals/trapezoid.js"></script>
+    <script src="src/integrals/simpson.js"></script>
+
+    <script src="src/main.js"></script>
+</body>
+</html>
