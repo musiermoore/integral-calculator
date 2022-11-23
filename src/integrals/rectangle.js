@@ -4,8 +4,8 @@ const calculateWithRectangleMethod = ({ integral, firstLimit, secondLimit, integ
     let square = 0.00
 
     for (let index = Number(firstLimit); index < integrationInterval; index += Number(partitionStep)) {
-        square += calculateIntegral(integral, index)
+        square += Number(calculateIntegral(integral, index))
     }
 
-    return (partitionStep * square).toFixed(3)
+    return window.integralError ? '-' : (partitionStep * square).toFixed(3)
 }

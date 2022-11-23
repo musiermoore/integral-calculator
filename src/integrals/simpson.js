@@ -20,5 +20,5 @@ const calculateWithSimpsonMethod = ({ integral, firstLimit, secondLimit, integra
         iterationIndex++;
     }
 
-    return (partitionStep / 3 * square).toFixed(3)
+    return window.integralError ? '-' : (partitionStep / 3 * square).toFixed(3)
 }
