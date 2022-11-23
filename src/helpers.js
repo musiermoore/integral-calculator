@@ -7,12 +7,12 @@ const calculateIntegral = (integral, x, fractionDigits = 3) => {
         .replaceAll('ln', 'log')
         .replaceAll('x', x)
 
-    let result = '-'
+    let result = 0
 
     try {
-        result = parseFloat(parseFloat(math.evaluate(integral))).toFixed(fractionDigits)
+        result = parseFloat(math.evaluate(integral)).toFixed(fractionDigits)
     } catch (e) {
-        alert('Ошибка во введенном интеграле!')
+        window.integralError = true
     }
 
     return result
