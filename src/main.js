@@ -19,9 +19,42 @@ if ($calculateButton) {
             integral, firstLimit, secondLimit, integrationInterval
         }
 
-        document.querySelector('#rectangle-result').innerHTML = calculateWithRectangleMethod(data)
-        document.querySelector('#trapezoid-result').innerHTML = calculateWithTrapezoidMethod(data)
-        document.querySelector('#simpson-result').innerHTML = calculateWithSimpsonMethod(data)
+        setRectangleResult(data)
+        setTrapezoidResult(data)
+        setSimpsonResult(data)
+
+        if (window.integralError) {
+            alert('Ошибка во введенном интеграле!')
+        }
     })
 }
 
+const setRectangleResult = (data) => {
+    const start = new Date().getTime();
+
+    const result = calculateWithRectangleMethod(data)
+
+    const end = new Date().getTime();
+
+    document.querySelector('#rectangle-result').innerHTML = `${result} (${end - start} мс)`
+}
+
+const setTrapezoidResult = (data) => {
+    const start = new Date().getTime();
+
+    const result = calculateWithTrapezoidMethod(data)
+
+    const end = new Date().getTime();
+
+    document.querySelector('#trapezoid-result').innerHTML = `${result} (${end - start} мс)`
+}
+
+const setSimpsonResult = (data) => {
+    const start = new Date().getTime();
+
+    const result = calculateWithSimpsonMethod(data)
+
+    const end = new Date().getTime();
+
+    document.querySelector('#simpson-result').innerHTML = `${result} (${end - start} мс)`
+}
